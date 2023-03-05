@@ -4,7 +4,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StatusBar} from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
 
 import ManageTaskScreen from './src/screens/ManageTaskScreen';
 import TaskListScreen from './src/screens/TaskListScreen';
@@ -19,10 +18,6 @@ const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 function ToDoOverview() {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
-
   return (
     <BottomTabs.Navigator
       screenOptions={({navigation}) => ({

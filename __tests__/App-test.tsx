@@ -2,7 +2,7 @@
  * @format
  */
 
-import 'react-native';
+import 'react-native/types';
 import React from 'react';
 import App from '../App';
 

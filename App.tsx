@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React, {useEffect} from 'react';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StatusBar} from 'react-native';
+import RNBootSplash from 'react-native-bootsplash';
 
 import ManageTaskScreen from './src/screens/ManageTaskScreen';
 import TaskListScreen from './src/screens/TaskListScreen';
@@ -65,6 +66,14 @@ function ToDoOverview() {
 }
 
 const App = () => {
+  const init = async () => {
+    await RNBootSplash.hide({duration: 100});
+  };
+
+  React.useEffect(() => {
+    init();
+  }, []);
+
   return (
     <>
       <StatusBar barStyle={'light-content'} backgroundColor={PALETTE.color1} />
